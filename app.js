@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const queryRoutes = require('./routes/queryRoutes');
 const userRegistrationRoutes = require('./routes/userRegistration');
+const subMasRoutes = require('./routes/subMasRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use('/user', userRoutes);
 app.use('/query', queryRoutes);
 app.use('/userReg', userRegistrationRoutes);
+app.use('/subject', subMasRoutes);
 
 // Start the server
 app.listen(port, () => {

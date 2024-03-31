@@ -45,7 +45,7 @@ class UserReg {
     async UpdateRegistration(Id,role, name, email,phone,address,profilePicture,department,jobTitle) {
         try {
             const xmlParameters = `<parameter>
-            <Id>${role}</Id>
+            <Id>${Id}</Id>
             <Role>${role}</Role>
             <Name>${name}</Name>
             <Email>${email}</Email>
@@ -54,7 +54,6 @@ class UserReg {
             <ProfilePicture>${profilePicture}</ProfilePicture>
             <Department>${department}</Department>
             <JobTitle>${jobTitle}</JobTitle>
-            <Flag>Insert</Flag>
         </parameter>`;
             const pool = await sql.connect(config);
             const result = await pool.request()
